@@ -35,7 +35,7 @@ import { Language, FeaturedVideo } from "@material-ui/icons";
 
 const drawerWidth = 240;
 
-//CSS for Application component
+//CSS cho Application component
 const StyledBadge = withStyles((theme) => ({
   badge: {
     backgroundColor: "#44b700",
@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
-  // necessary for content to be below app bar
+  // CSS toolbar mixins cần thiết để nội dung ở bên dưới thanh ứng dụng
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
@@ -377,7 +377,7 @@ function Application(props) {
       </AppBar>
 
       <nav className={classes.drawer} aria-label="chat rooms">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        {/* Việc thực hiện này có thể được hoán đổi với js để tránh SEO trùng lặp các liên kết. */}
         <Hidden smUp implementation="css">
           <Drawer
             container={container}
@@ -389,7 +389,7 @@ function Application(props) {
               paper: classes.drawerPaper,
             }}
             ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
+              keepMounted: true, // Hiệu suất mở tốt hơn trên thiết bị di động.
             }}
           >
             {drawer}

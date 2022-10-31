@@ -145,7 +145,7 @@ function Messages({ values, msgId }) {
     if (userHeart) {
       return db
         .runTransaction((transaction) => {
-          // This code may get re-run multiple times if there are conflicts.
+          // Mã này có thể được chạy lại nhiều lần nếu có xung đột.
           return transaction.get(messageDoc).then((doc) => {
             if (!doc) {
               console.log("doc not found");
@@ -171,7 +171,7 @@ function Messages({ values, msgId }) {
     } else {
       return db
         .runTransaction((transaction) => {
-          // This code may get re-run multiple times if there are conflicts.
+          // Mã này có thể được chạy lại nhiều lần nếu có xung đột.
           return transaction.get(messageDoc).then((doc) => {
             if (!doc) {
               console.log("doc not found");
@@ -206,7 +206,7 @@ function Messages({ values, msgId }) {
     if (userFire) {
       return db
         .runTransaction((transaction) => {
-          // This code may get re-run multiple times if there are conflicts.
+          // Mã này có thể được chạy lại nhiều lần nếu có xung đột.
           return transaction.get(messageDoc).then((doc) => {
             if (!doc) {
               console.log("doc not found");
@@ -232,7 +232,7 @@ function Messages({ values, msgId }) {
     } else {
       return db
         .runTransaction((transaction) => {
-          // This code may get re-run multiple times if there are conflicts.
+          // Mã này có thể được chạy lại nhiều lần nếu có xung đột.
           return transaction.get(messageDoc).then((doc) => {
             if (!doc) {
               console.log("doc not found");
@@ -267,7 +267,7 @@ function Messages({ values, msgId }) {
     if (userLiked) {
       return db
         .runTransaction((transaction) => {
-          // This code may get re-run multiple times if there are conflicts.
+          // Mã này có thể được chạy lại nhiều lần nếu có xung đột.
           return transaction.get(messageDoc).then((doc) => {
             if (!doc) {
               console.log("doc not found");
@@ -293,7 +293,7 @@ function Messages({ values, msgId }) {
     } else {
       return db
         .runTransaction((transaction) => {
-          // This code may get re-run multiple times if there are conflicts.
+          // Mã này có thể được chạy lại nhiều lần nếu có xung đột.
           return transaction.get(messageDoc).then((doc) => {
             if (!doc) {
               console.log("doc not found");
