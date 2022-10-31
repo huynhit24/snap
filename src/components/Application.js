@@ -22,7 +22,7 @@ import { deepPurple } from "@material-ui/core/colors";
 import Rooms from "./Rooms";
 import { GoSignOut } from "react-icons/go";
 import { FaUserEdit } from "react-icons/fa";
-import { auth, db } from "../Firebase/Firebase";
+import { auth, db } from "../firebase";
 import { Link, Redirect } from "react-router-dom";
 import EditProfile from "./EditProfile";
 import Fade from "@material-ui/core/Fade";
