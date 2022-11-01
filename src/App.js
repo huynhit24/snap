@@ -8,8 +8,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./firebase";
 import "./App.css";
 //colormode
+
+// eslint-disable-next-line no-unused-vars
 import { ThemeProvider } from '@material-ui/core/styles';
+// eslint-disable-next-line no-unused-vars
 import theme from './configs/theme';
+// eslint-disable-next-line no-unused-vars
 import useTheme from './hooks/useTheme';
 
 //new inport component
@@ -32,7 +36,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   // get and set theme
-  useTheme();
+  //useTheme();
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -80,7 +84,7 @@ function App() {
           <Login />
         ) : (
           
-          <ThemeProvider theme={theme}>
+          // <ThemeProvider theme={theme}>
             <div className={classes.root}>
               <Application uid={user} />
               <main className={classes.content}>
@@ -98,7 +102,7 @@ function App() {
                 </Switch>
               </main>
             </div>
-          </ThemeProvider>
+          // </ThemeProvider>
 
         )}
       </Router>
