@@ -24,16 +24,16 @@ import { DarkModeToggle } from '../ToggleDarkMode';
 // }
 
 const actions = [
-  { icon: <HomeIcon />, name: 'Trang chủ', to: '/', isBlank: false },
+  { icon: <HomeIcon style={{color: "red"}}/>, name: 'Trang chủ', to: '/', isBlank: false },
   {
-    icon: <BurstMode />,
+    icon: <BurstMode style={{color: "lightgreen"}}/>,
     name: 'Darkmode',
     to: null,
     isBlank: false,
   },
   // { icon: <SettingButton />, name: 'Cài đặt', to: null, isBlank: false },
   {
-    icon: <ContactMailIcon />,
+    icon: <ContactMailIcon style={{color: "yellow"}}/>,
     name: 'Liên hệ Snap',
     to: LINKS.WEBSITE,
     isBlank: true,

@@ -10,12 +10,14 @@ import { db } from "../firebase";
 import { useHistory } from "react-router-dom";
 //import backgroundChat from "../Assets/gaming-plus-story_img.png";
 
+// var randomColor = Math.floor(Math.random()*16777215).toString(16);
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: "50px",
     paddingBottom: "25px",
     // color: "#f0f0f0",
     color: "#f0f0f0",
+    // backgroundColor: "f0f0f0"
   },
   heading: {
     fontSize: "2.2em",
@@ -39,28 +41,35 @@ const useStyles = makeStyles((theme) => ({
     height: "80px",
     width: "80px",
     backgroundColor: "#8fabbd66",
+    // backgroundColor: "black",
     fontSize: "2rem",
+    // color: "#cb43fc" 
+    // đang code chỗ này
   },
   rootChannel: {
     height: "calc(100vh - 185px)",
     position: "relative",
     padding: "15px",
     overflowY: "scroll",
+    // backgroundColor: "black"
   },
   channelText: {
     paddingTop: "10px",
     fontSize: "1.2rem",
   },
   channelCard: {
-    backgroundColor: "#1e2439",
+    // backgroundColor: "#1e2439",
+    backgroundColor: "transparent",
     boxShadow:
       "0px 3px 4px -1px rgb(0 0 0 / 17%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
     color: "rgb(220, 221, 222)",
+    // color: "black",
   },
   backgroundChatSupport: {
     marginTop: "50px",
     width: "50%",
     height: "auto",
+    // backgroundColor: "white",
   } 
 }));
 
@@ -87,13 +96,13 @@ function Home() {
   };
 
   return (
-    <div style={{ backgroundColor: "rgb(34 39 59)" }}>{/*<div style={{ backgroundColor: "rgb(34 39 59)" }}>*/}
+    <div style={{ backGroundColor: "transparent" }}>{/*<div style={{ backgroundColor: "rgb(34 39 59)" }}>*/}
       <Grid container className={classes.root}>
         <Grid item xs={12} style={{ textAlign: "center" }}>
-          <Typography component="h1" className={classes.heading}>
+          <Typography component="h1" className={classes.heading} style={{color: "#cb43fc"}}>
              Snap 🤞🤞🤞
           </Typography>
-          <Typography component="h1" className={classes.subHeading}>
+          <Typography component="h1" className={classes.subHeading} style={{color: "#cb43fc"}}>
             Cùng nhau trao đổi, chia sẻ kinh nghiệm học tập mọi lúc mọi nơi! 👍👍
           </Typography>          
         </Grid>
