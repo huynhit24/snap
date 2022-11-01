@@ -1,4 +1,4 @@
-import { COLOR_VAR_KEYS, THEME_KEYS} from 'constants';
+import { COLOR_VAR_KEYS, THEME_KEYS} from '../constant';
 const htmlRoot = document.querySelector(':root');
 
 // get current root palettes

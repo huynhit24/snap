@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ThemeSetting from '../Theme';
 import ToggleNavButton from '../ToggleNavButton';
-import VoiceSetting from '../Voice';
+//import VoiceSetting from '../Voice';
 import useStyle from './style';
 
 function SettingModal({ open, onClose }) {
@@ -34,10 +34,10 @@ function SettingModal({ open, onClose }) {
           <ThemeSetting />
         </div>
 
-        <div className={classes.contentItem}>
+        {/* <div className={classes.contentItem}>
           <h2 className={classes.contentLabel}>Giọng đọc</h2>
           <VoiceSetting />
-        </div>
+        </div> */}
 
         <div className={classes.contentItem}>
           <h2 className={classes.contentLabel}>Cài đặt khác</h2>

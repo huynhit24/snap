@@ -19,3 +19,8 @@ export const THEME_KEYS = {
     DARK: 'dark',
     CUSTOM: 'custom',
 };
+
+export const LINKS = {
+    FB: 'https://facebook.com/huynh2357',
+    WEBSITE: 'https://github.com/huynhit24',
+};

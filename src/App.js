@@ -9,8 +9,8 @@ import { auth, db } from "./firebase";
 import "./App.css";
 //colormode
 import { ThemeProvider } from '@material-ui/core/styles';
-import theme from 'configs/theme';
-import useTheme from 'hooks/useTheme';
+import theme from './configs/theme';
+import useTheme from './hooks/useTheme';
 
 //new inport component
 //import LaptopModal from "./Components/LaptopModal";
