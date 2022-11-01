@@ -7,17 +7,16 @@ import Home from "./components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./firebase";
 import "./App.css";
-//colormode
 
+// colormode
 // eslint-disable-next-line no-unused-vars
 import { ThemeProvider } from '@material-ui/core/styles';
 // eslint-disable-next-line no-unused-vars
 import theme from './configs/theme';
 // eslint-disable-next-line no-unused-vars
 import useTheme from './hooks/useTheme';
-
-//new inport component
-//import LaptopModal from "./Components/LaptopModal";
+// eslint-disable-next-line no-unused-vars
+import SpeedDials from './components/SpeedDial';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,7 +35,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   // get and set theme
-  //useTheme();
+  useTheme();
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -84,11 +83,12 @@ function App() {
           <Login />
         ) : (
           
-          // <ThemeProvider theme={theme}>
+          <ThemeProvider theme={theme}>
             <div className={classes.root}>
               <Application uid={user} />
               <main className={classes.content}>
                 <div className={classes.toolbar} style={{ minHeight: "50px" }} />
+
                 <Switch>
                   <Route path="/" exact>
                     <Home />
@@ -100,9 +100,11 @@ function App() {
                     <Chat />
                   </Route>
                 </Switch>
+
+                <SpeedDials></SpeedDials>
               </main>
             </div>
-          // </ThemeProvider>
+          </ThemeProvider>
 
         )}
       </Router>

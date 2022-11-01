@@ -1,6 +1,6 @@
 import Tooltip from '@material-ui/core/Tooltip';
-import { THEME_KEYS } from 'constant';
-import { debounce } from 'helpers';
+import { THEME_KEYS } from '../../../../../constant';
+import { debounce } from '../../../../../helpers';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import useStyle from './style';

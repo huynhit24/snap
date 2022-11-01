@@ -1,6 +1,14 @@
 import { COLOR_VAR_KEYS, THEME_KEYS} from '../constant';
 const htmlRoot = document.querySelector(':root');
 
+// prevent execute continuously a function
+export const debounce = (timer = null, cbFn, delay = 350) => {
+  if (timer) {
+    clearTimeout(timer);
+  }
+  return setTimeout(cbFn, delay);
+};
+
 // get current root palettes
 function getRootPalettes() {
     let palettes = [];
