@@ -7,6 +7,10 @@ import Home from "./components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./firebase";
 import "./App.css";
+//colormode
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from 'configs/theme';
+import useTheme from 'hooks/useTheme';
 
 //new inport component
 //import LaptopModal from "./Components/LaptopModal";
@@ -26,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const [user, setUser] = useState(null);
+
+  // get and set theme
+  useTheme();
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -72,23 +79,27 @@ function App() {
         {!user ? (
           <Login />
         ) : (
-          <div className={classes.root}>
-            <Application uid={user} />
-            <main className={classes.content}>
-              <div className={classes.toolbar} style={{ minHeight: "50px" }} />
-              <Switch>
-                <Route path="/" exact>
-                  <Home />
-                </Route>
-                {/* <Route path="/shop" exact>
-                  <LaptopModal />
-                </Route> */}
-                <Route path="/channel/:id">
-                  <Chat />
-                </Route>
-              </Switch>
-            </main>
-          </div>
+          
+          <ThemeProvider theme={theme}>
+            <div className={classes.root}>
+              <Application uid={user} />
+              <main className={classes.content}>
+                <div className={classes.toolbar} style={{ minHeight: "50px" }} />
+                <Switch>
+                  <Route path="/" exact>
+                    <Home />
+                  </Route>
+                  {/* <Route path="/shop" exact>
+                    <LaptopModal />
+                  </Route> */}
+                  <Route path="/channel/:id">
+                    <Chat />
+                  </Route>
+                </Switch>
+              </main>
+            </div>
+          </ThemeProvider>
+
         )}
       </Router>
     </div>
