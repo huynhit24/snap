@@ -8,14 +8,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./firebase";
 import "./App.css";
 
-// colormode
-// eslint-disable-next-line no-unused-vars
-import { ThemeProvider } from '@material-ui/core/styles';
-// eslint-disable-next-line no-unused-vars
-import theme from './configs/theme';
-// eslint-disable-next-line no-unused-vars
-import useTheme from './hooks/useTheme';
-// eslint-disable-next-line no-unused-vars
 import SpeedDials from './components/SpeedDial';
 
 const useStyles = makeStyles((theme) => ({
@@ -33,9 +25,6 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const [user, setUser] = useState(null);
-
-  // get and set theme
-  useTheme();
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -82,30 +71,26 @@ function App() {
         {!user ? (
           <Login />
         ) : (
-          
-          <ThemeProvider theme={theme}>
-            <div className={classes.root}>
-              <Application uid={user} />
-              <main className={classes.content}>
-                <div className={classes.toolbar} style={{ minHeight: "50px" }} />
+          <div className={classes.root}>
+            <Application uid={user} />
+            <main className={classes.content}>
+              <div className={classes.toolbar} style={{ minHeight: "50px" }} />
 
-                <Switch>
-                  <Route path="/" exact>
-                    <Home />
-                  </Route>
-                  {/* <Route path="/shop" exact>
+              <Switch>
+                <Route path="/" exact>
+                  <Home />
+                </Route>
+                {/* <Route path="/shop" exact>
                     <LaptopModal />
                   </Route> */}
-                  <Route path="/channel/:id">
-                    <Chat />
-                  </Route>
-                </Switch>
+                <Route path="/channel/:id">
+                  <Chat />
+                </Route>
+              </Switch>
 
-                <SpeedDials></SpeedDials>
-              </main>
-            </div>
-          </ThemeProvider>
-
+              <SpeedDials></SpeedDials>
+            </main>
+          </div>
         )}
       </Router>
     </div>

@@ -1,4 +1,4 @@
-import ArrowUpIcon from '@material-ui/icons/ArrowDropUp';
+// import BurstMode from '@material-ui/icons/BurstMode';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import HomeIcon from '@material-ui/icons/Home';
 import SpeedDial from '@material-ui/lab/SpeedDial';
@@ -7,26 +7,26 @@ import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
 import { LINKS } from '../../constant';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
 import SettingButton from './Settings/SettingButton';
 import useStyle from './style';
 
-function ScrollTop() {
-  return (
-    <Link to="scrollTop" spy={true} smooth={true} duration={500}>
-      <ArrowUpIcon style={{ transform: 'translateY(20%)' }} />
-    </Link>
-  );
-}
+// function ScrollTop() {
+//   return (
+//     <Link to="scrollTop" spy={true} smooth={true} duration={500}>
+//       <ArrowUpIcon style={{ transform: 'translateY(20%)' }} />
+//     </Link>
+//   );
+// }
 
 const actions = [
   { icon: <HomeIcon />, name: 'Trang chủ', to: '/', isBlank: false },
-  {
-    icon: <ScrollTop />,
-    name: 'Lên đầu trang',
-    to: null,
-    isBlank: false,
-  },
+  // {
+  //   icon: <BurstMode />,
+  //   name: 'Lên đầu trang',
+  //   to: null,
+  //   isBlank: false,
+  // },
   { icon: <SettingButton />, name: 'Cài đặt', to: null, isBlank: false },
   {
     icon: <ContactMailIcon />,

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles(() => ({
   root: {
     position: 'fixed',
-    bottom: 16,
+    bottom: 96,
     right: 16,
 
     '& .MuiSpeedDialAction-fab': {
@@ -20,8 +20,8 @@ export default makeStyles(() => ({
   },
 
   fab: {
-    width: '5rem',
-    height: '5rem',
+    width: '3rem',
+    height: '3rem',
     backgroundColor: 'var(--accent-color)',
 
     '&:hover, &:active': {

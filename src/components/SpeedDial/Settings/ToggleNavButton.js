@@ -5,14 +5,14 @@ function ToggleNavButton() {
 
   // get status navigation
   useEffect(() => {
-    const nav = document.getElementById('dynoNav');
+    const nav = document.getElementById('snapNav');
     nav && nav.style?.display === 'none'
       ? setIsActive(true)
       : setIsActive(false);
   }, []);
 
   useEffect(() => {
-    const nav = document.getElementById('dynoNav');
+    const nav = document.getElementById('snapNav');
     if (nav) {
       if (isActive) {
         nav.style.display = 'none';
