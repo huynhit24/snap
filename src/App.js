@@ -1,23 +1,96 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Application from "./components/Application";
+import Chat from "./components/Chat";
+import Login from "./components/SignUp";
+import Home from "./components/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { auth, db } from "./firebase";
+import "./App.css";
+
+//new inport component
+//import LaptopModal from "./Components/LaptopModal";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+  },
+  toolbar: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    backgroundColor: "#22273b !important",
+    height: "100vh",
+  },
+}));
 
 function App() {
+  const classes = useStyles();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        db.collection("users")
+          .doc(user.uid)
+          .get()
+          .then((doc) => {
+            if (doc.exists) {
+              console.log("user exits");
+            } else {
+              const details = {
+                name: user.displayName,
+                displayName: user.displayName.split(" ")[0],
+                photoURL: user.photoURL,
+                email: user.email,
+                uid: user.uid,
+              };
+              db.collection("users")
+                .doc(user.uid)
+                .set(details)
+                .then((res) => {
+                  console.log("new user created");
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
+        setUser(user.uid);
+      } else {
+        setUser(null);
+      }
+    });
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        {!user ? (
+          <Login />
+        ) : (
+          <div className={classes.root}>
+            <Application uid={user} />
+            <main className={classes.content}>
+              <div className={classes.toolbar} style={{ minHeight: "50px" }} />
+              <Switch>
+                <Route path="/" exact>
+                  <Home />
+                </Route>
+                {/* <Route path="/shop" exact>
+                  <LaptopModal />
+                </Route> */}
+                <Route path="/channel/:id">
+                  <Chat />
+                </Route>
+              </Switch>
+            </main>
+          </div>
+        )}
+      </Router>
     </div>
   );
 }
