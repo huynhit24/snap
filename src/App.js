@@ -8,8 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./firebase";
 import "./App.css";
 
-//new inport component
-//import LaptopModal from "./Components/LaptopModal";
+import SpeedDials from './components/SpeedDial';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -76,17 +75,20 @@ function App() {
             <Application uid={user} />
             <main className={classes.content}>
               <div className={classes.toolbar} style={{ minHeight: "50px" }} />
+
               <Switch>
                 <Route path="/" exact>
                   <Home />
                 </Route>
                 {/* <Route path="/shop" exact>
-                  <LaptopModal />
-                </Route> */}
+                    <LaptopModal />
+                  </Route> */}
                 <Route path="/channel/:id">
                   <Chat />
                 </Route>
               </Switch>
+
+              <SpeedDials></SpeedDials>
             </main>
           </div>
         )}
