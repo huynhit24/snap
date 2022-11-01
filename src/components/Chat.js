@@ -160,7 +160,7 @@ function Chat() {
   };
 
   return (
-    <div className={classes.root}>
+    <div id="chat-darkmode" className={classes.root}>
       {modalState ? <FileUpload setState={openModal} file={file} /> : null}
       <Grid item xs={12} className={classes.roomName}>
         <BiHash className={classes.iconDesign} />

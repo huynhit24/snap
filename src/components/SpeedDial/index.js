@@ -1,4 +1,5 @@
-// import BurstMode from '@material-ui/icons/BurstMode';
+// eslint-disable-next-line no-unused-vars
+import BurstMode from '@material-ui/icons/BurstMode';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import HomeIcon from '@material-ui/icons/Home';
 import SpeedDial from '@material-ui/lab/SpeedDial';
@@ -8,8 +9,11 @@ import { LINKS } from '../../constant';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 // import { Link } from 'react-scroll';
+// eslint-disable-next-line no-unused-vars
 import SettingButton from './Settings/SettingButton';
 import useStyle from './style';
+// eslint-disable-next-line no-unused-vars
+import { DarkModeToggle } from '../ToggleDarkMode';
 
 // function ScrollTop() {
 //   return (
@@ -21,13 +25,13 @@ import useStyle from './style';
 
 const actions = [
   { icon: <HomeIcon />, name: 'Trang chủ', to: '/', isBlank: false },
-  // {
-  //   icon: <BurstMode />,
-  //   name: 'Lên đầu trang',
-  //   to: null,
-  //   isBlank: false,
-  // },
-  { icon: <SettingButton />, name: 'Cài đặt', to: null, isBlank: false },
+  {
+    icon: <BurstMode />,
+    name: 'Darkmode',
+    to: null,
+    isBlank: false,
+  },
+  // { icon: <SettingButton />, name: 'Cài đặt', to: null, isBlank: false },
   {
     icon: <ContactMailIcon />,
     name: 'Liên hệ Snap',

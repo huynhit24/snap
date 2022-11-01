@@ -4,7 +4,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import PropTypes from 'prop-types';
 import React from 'react';
-import ThemeSetting from '../Theme';
+// import ThemeSetting from '../Theme';
 import useStyle from './style';
 import DialogTitle from "@material-ui/core/DialogTitle";
 
@@ -26,7 +26,7 @@ function SettingModal({ open, onClose }) {
       </DialogTitle>
 
       <DialogContent classes={{ root: classes.content }}>
-        <ThemeSetting />
+        {/* <ThemeSetting /> */}
       </DialogContent>
 
       <DialogActions className={classes.actions}>
