@@ -52,12 +52,12 @@ function EditProfile({ toggler, alert }) {
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">Edit User Profile</DialogTitle>
+        <DialogTitle id="form-dialog-title">Cập nhật tài khoản</DialogTitle>
         <DialogContent>
           <form autoComplete="off">
             <TextField
               id="outlined-basic"
-              label="Name"
+              label="Tên"
               fullWidth
               margin="normal"
               variant="outlined"
@@ -86,7 +86,7 @@ function EditProfile({ toggler, alert }) {
 
             <TextField
               id="outlined-basic"
-              label="Display Name"
+              label="Tên hiển thị"
               fullWidth
               margin="normal"
               variant="outlined"
@@ -103,14 +103,14 @@ function EditProfile({ toggler, alert }) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} style={{ color: "white" }}>
-            Cancel
+            Hủy
           </Button>
           <Button
             onClick={(e) => updateProfile(e)}
             color="primary"
             variant="contained"
           >
-            Update
+            Cập nhật
           </Button>
         </DialogActions>
       </Dialog>

@@ -92,7 +92,7 @@ function SignUp() {
       <div className={classes.paper}>
         <img src={loginImg} className={classes.mainImg} alt="signup img" />
         <Topography variant="h4" style={{ paddingTop: "15px" }}>
-          Đăng nhập SmartClass
+          Đăng nhập Snap 🤞🤞🤞
         </Topography>
         <Button
           variant="outlined"

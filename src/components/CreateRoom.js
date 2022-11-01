@@ -31,13 +31,13 @@ function CreateRoom({ create, manage }) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Create A New Channel"}
+          {"Tạo chủ đề mới"}
         </DialogTitle>
         <DialogContent>
           <form autoComplete="off" onSubmit={handleNewRoom}>
             <TextField
               id="outlined-basic"
-              label="Enter Channel Name"
+              label="Nhập tên chủ đề"
               fullWidth
               margin="normal"
               variant="outlined"

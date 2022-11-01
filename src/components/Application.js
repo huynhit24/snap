@@ -204,7 +204,7 @@ function Application(props) {
     <div>
       <Toolbar className={classes.sideToolBar}>
         <Typography variant="h5" className={classes.sideToolBarText}>
-          SMARTCLASS
+          SNAP 🤞🤞🤞
         </Typography>
       </Toolbar>
       <Divider />
@@ -254,7 +254,7 @@ function Application(props) {
         open={alert}
         onClose={handleAlert}
         TransitionComponent={Fade}
-        message="Display Name Updated Successfully"
+        message="Đã cập nhật thành công tên hiển thị!"
         key={Fade}
         action={
           <IconButton aria-label="close" color="inherit" onClick={handleAlert}>

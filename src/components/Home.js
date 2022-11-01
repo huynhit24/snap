@@ -91,10 +91,10 @@ function Home() {
       <Grid container className={classes.root}>
         <Grid item xs={12} style={{ textAlign: "center" }}>
           <Typography component="h1" className={classes.heading}>
-            💻 SmartClass Support 💻
+             Snap 🤞🤞🤞
           </Typography>
           <Typography component="h1" className={classes.subHeading}>
-            Cùng nhau trao đổi, chia sẻ kinh nghiệm học tập! 👍👍
+            Cùng nhau trao đổi, chia sẻ kinh nghiệm học tập mọi lúc mọi nơi! 👍👍
           </Typography>          
         </Grid>
         {/* <Grid item xs={12} style={{ textAlign: "center" }}>

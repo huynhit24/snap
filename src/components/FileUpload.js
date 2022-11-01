@@ -130,7 +130,7 @@ function FileUpload({ setState, file }) {
           <Typography className={classes.imageName}>{file.name}</Typography>
         </div>
 
-        <DialogTitle id="alert-dialog-title">Upload Image</DialogTitle>
+        <DialogTitle id="alert-dialog-title">Tải ảnh lên</DialogTitle>
 
         <DialogContent>
           <form
@@ -141,7 +141,7 @@ function FileUpload({ setState, file }) {
           >
             <TextField
               id="outlined-basic"
-              label="Add A Message"
+              label="Thêm ghi chú"
               fullWidth
               margin="normal"
               variant="outlined"
@@ -168,7 +168,7 @@ function FileUpload({ setState, file }) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} style={{ color: "white" }}>
-            Cancel
+            Hủy
           </Button>
           <Button
             type="submit"
@@ -177,7 +177,7 @@ function FileUpload({ setState, file }) {
             autoFocus
             variant="contained"
           >
-            Upload
+            Tải lên
           </Button>
         </DialogActions>
       </Dialog>

@@ -214,7 +214,7 @@ function Chat() {
               className={classes.message}
               required
               id="outlined-basic"
-              label="Enter Message"
+              label="Nhập tin nhắn"
               variant="outlined"
               multiline
               rows={1}

@@ -28,7 +28,7 @@ function DeleteModal({ msgId, text, deleteMsg, handleModal, postImg }) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Are you sure you want to delete the message?"}
+          {"Bạn có chắc chắn muốn xóa?"}
         </DialogTitle>
         <DialogContent>
           <DialogContentText
@@ -47,7 +47,7 @@ function DeleteModal({ msgId, text, deleteMsg, handleModal, postImg }) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} style={{ color: "white" }}>
-            Cancel
+            Hủy
           </Button>
 
           <Button
@@ -56,7 +56,7 @@ function DeleteModal({ msgId, text, deleteMsg, handleModal, postImg }) {
             autoFocus
             variant="contained"
           >
-            Delete
+            Xóa
           </Button>
         </DialogActions>
       </Dialog>
