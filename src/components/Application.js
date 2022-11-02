@@ -283,7 +283,7 @@ function Application(props) {
           </IconButton>
 
           <Typography variant="h6" className={classes.title}>
-            <Link to="/" style={{ textDecoration: "none", color: "#dcddde" }}>
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
               😍 Trang chủ
             </Link>
             {/* modal show laptop from smartshop */}
@@ -297,12 +297,13 @@ function Application(props) {
           <div>
             {/* Gọi video */}
             <IconButton
-              aria-label="account of current user"
+              aria-label="VideoCall"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleCallVideo}
               color="inherit"
               href={"http://localhost:5000/"}
+              title="Gọi video"
             >
               <VideoCall style={{color: "lightgreen"}}/>
             </IconButton>
@@ -313,6 +314,7 @@ function Application(props) {
               aria-haspopup="true"
               onClick={handleLanguage}
               color="inherit"
+              title="Lớp học"
             >
               <School style={{color: "yellow"}}/>
             </IconButton>
@@ -323,6 +325,7 @@ function Application(props) {
               aria-haspopup="true"
               onClick={handleLanguage}
               color="inherit"
+              title="Darkmode"
             >
               <BurstMode style={{color: "#FB2576"}}/>
             </IconButton>
@@ -333,6 +336,7 @@ function Application(props) {
               aria-haspopup="true"
               onClick={handleLanguage}
               color="inherit"
+              title="Liên hệ Snap"
             >
               <ContactMail style={{color: "orange"}}/>
             </IconButton>
@@ -370,6 +374,7 @@ function Application(props) {
               aria-haspopup="true"
               onClick={handleMenu}
               color="inherit"
+              title="Tài khoản"
             >
               <AccountCircle style={{color: "white"}}/>
             </IconButton>

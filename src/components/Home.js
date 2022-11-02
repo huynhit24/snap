@@ -99,10 +99,11 @@ function Home() {
     <div style={{ backGroundColor: "transparent" }}>{/*<div style={{ backgroundColor: "rgb(34 39 59)" }}>*/}
       <Grid container className={classes.root}>
         <Grid item xs={12} style={{ textAlign: "center" }}>
+          {/* color: "#cb43fc" */}
           <Typography component="h1" className={classes.heading} style={{color: "#cb43fc"}}>
              Snap 🤞🤞🤞
           </Typography>
-          <Typography component="h1" className={classes.subHeading} style={{color: "#cb43fc"}}>
+          <Typography component="h1" className={classes.subHeading} style={{color: "white"}}>
             Cùng nhau trao đổi, chia sẻ kinh nghiệm học tập mọi lúc mọi nơi! 👍👍
           </Typography>          
         </Grid>
