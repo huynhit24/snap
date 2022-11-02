@@ -192,7 +192,7 @@ function Chat() {
               aria-label="upload picture"
               component="span"
             >
-              <RiImageAddLine style={{ color: "#b9bbbe" }} />
+              <RiImageAddLine style={{ color: "yellow" }} />
             </IconButton>
           </label>
 
@@ -201,7 +201,7 @@ function Chat() {
             component="button"
             onClick={() => setEmojiBtn(!emojiBtn)}
           >
-            <GrEmoji style={{ color: "#b9bbbe" }} />
+            <GrEmoji style={{ color: "yellow" }} />
           </IconButton>
           {emojiBtn ? <Picker onSelect={addEmoji} theme="dark" /> : null}
 
@@ -225,7 +225,7 @@ function Chat() {
               }}
             />
             <IconButton type="submit" component="button">
-              <FiSend style={{ color: "#b9bbbe" }} />
+              <FiSend style={{ color: "white" }} />
             </IconButton>
           </form>
         </Grid>

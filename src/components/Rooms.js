@@ -127,7 +127,7 @@ function Rooms() {
           <ListItemIcon>
             <IoMdChatboxes className={classes.iconDesign} />
           </ListItemIcon>
-          <ListItemText primary="Phòng chat" style={{ color: "#8e9297", textAlign: "left" }} />
+          <ListItemText primary="Phòng chat" style={{ color: "white", textAlign: "left" }} />
           {open ? (
             <ExpandLess className={classes.primary} />
           ) : (
@@ -147,7 +147,7 @@ function Rooms() {
                 <ListItemIcon style={{ minWidth: "30px" }}>
                   <BiHash
                     className={classes.iconDesign}
-                    style={{ color: "#b9bbbe" }}
+                    style={{ color: "white" }}
                   />
                 </ListItemIcon>
                 <ListItemText
@@ -156,7 +156,7 @@ function Rooms() {
                       ? channel.channelName
                       : `${channel.channelName.substr(0, 12)}...`
                   }
-                  style={{ color: "#dcddde" }}
+                  style={{ color: "white" }}
                 />
               </ListItem>
             ))}
