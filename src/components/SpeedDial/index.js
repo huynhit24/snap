@@ -33,7 +33,7 @@ const actions = [
     to: null,
     isBlank: false,
   },
-  { icon: <School style={{color: "yellow"}}/>, name: 'Lớp học', to: null, isBlank: false },
+  { icon: <School style={{color: "yellow"}}/>, name: 'Lớp học', to: '/classroom', isBlank: false },
   { icon: <VideoCall style={{color: "pink"}}/>, name: 'Gọi video', to: null, isBlank: false },
   // { icon: <SettingButton />, name: 'Cài đặt', to: null, isBlank: false },
   {

@@ -2,7 +2,7 @@ import { Button, DialogActions, TextField } from "@material-ui/core";
 import React, { useState } from "react";
 import { useLocalContext } from "../../context/context";
 import { v4 as uuidV4 } from "uuid";
-import db from "../../firebase";
+import { db } from "../../firebase";
 
 const Form = () => {
   const [className, setClassName] = useState("");

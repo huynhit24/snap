@@ -9,6 +9,7 @@ import { auth, db } from "./firebase";
 import "./App.css";
 
 import SpeedDials from './components/SpeedDial';
+import ClassApp from "./ClassApp";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,9 +81,9 @@ function App() {
                 <Route path="/" exact>
                   <Home />
                 </Route>
-                {/* <Route path="/shop" exact>
-                    <LaptopModal />
-                  </Route> */}
+                <Route path="/classroom" exact>
+                    <ClassApp />
+                  </Route>
                 <Route path="/channel/:id">
                   <Chat />
                 </Route>

@@ -1,6 +1,6 @@
 import { Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import db from "../../firebase";
+import { db } from "../../firebase";
 import "./style.css";
 // eslint-disable-next-line
 import { useLocalContext } from "../../context/context";
