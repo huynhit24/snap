@@ -11,6 +11,8 @@ import "./App.css";
 import SpeedDials from './components/SpeedDial';
 import ClassApp from "./ClassApp";
 
+import { ContextProvider } from "./context/context";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -82,7 +84,9 @@ function App() {
                   <Home />
                 </Route>
                 <Route path="/classroom" exact>
-                    <ClassApp />
+                  <ContextProvider>
+                      <ClassApp />
+                  </ContextProvider>
                   </Route>
                 <Route path="/channel/:id">
                   <Chat />

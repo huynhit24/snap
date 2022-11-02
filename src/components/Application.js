@@ -194,7 +194,7 @@ function Application(props) {
       });
   };
 
-  const handleLanguage = () => {
+  const handleClassRoom = () => {
       
   }
 
@@ -312,8 +312,9 @@ function Application(props) {
               aria-label="School"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleLanguage}
+              onClick={handleClassRoom}
               color="inherit"
+              href={"/classroom"}
               title="Lớp học"
             >
               <School style={{color: "yellow"}}/>
@@ -323,7 +324,7 @@ function Application(props) {
               aria-label="Darkmode"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleLanguage}
+              onClick={handleClassRoom}
               color="inherit"
               title="Darkmode"
             >
@@ -334,7 +335,7 @@ function Application(props) {
               aria-label="Contact"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleLanguage}
+              onClick={handleClassRoom}
               color="inherit"
               title="Liên hệ Snap"
             >

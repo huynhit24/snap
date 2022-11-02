@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import { IsUserRedirect, ProtectedRoute } from "./routes/Routes";
 import { useLocalContext } from "./context/context";
 import { db } from "./firebase";
-import { ContextProvider } from "./context/context";
 
 function ClassApp() {
     const { loggedInMail } = useLocalContext();
@@ -40,23 +39,23 @@ function ClassApp() {
         }
     }, [loggedInMail]);
     return (
-        <ContextProvider>
 
-            <Router>
-                <Switch>
-                    {createdClasses.map((item, index) => (
-                        <Route key={index} exact path={`/${item.id}`}>
-                            <Drawer />
-                            <Main classData={item} />
-                        </Route>
-                    ))}
-                    {joinedClasses.map((item, index) => (
-                        <Route key={index} exact path={`/${item.id}`}>
-                            <Drawer />
-                            <Main classData={item} />
-                        </Route>
-                    ))}
-                    {/* <IsUserRedirect
+
+        <Router>
+            <Switch>
+                {createdClasses.map((item, index) => (
+                    <Route key={index} exact path={`/${item.id}`}>
+                        <Drawer />
+                        <Main classData={item} />
+                    </Route>
+                ))}
+                {joinedClasses.map((item, index) => (
+                    <Route key={index} exact path={`/${item.id}`}>
+                        <Drawer />
+                        <Main classData={item} />
+                    </Route>
+                ))}
+                {/* <IsUserRedirect
                         user={loggedInMail}
                         loggedInPath="/"
                         path="/signin"
@@ -65,21 +64,21 @@ function ClassApp() {
                         <Login />
                     </IsUserRedirect> */}
 
-                    {/* <ProtectedRoute user={loggedInMail} path="/" exact> */}
-                    <Drawer />
-                    <ol className="joined">
-                        {createdClasses.map((item) => (
-                            <JoinedClasses classData={item} />
-                        ))}
+                {/* <ProtectedRoute user={loggedInMail} path="/" exact> */}
+                <Drawer />
+                <ol className="joined">
+                    {createdClasses.map((item) => (
+                        <JoinedClasses classData={item} />
+                    ))}
 
-                        {joinedClasses.map((item) => (
-                            <JoinedClasses classData={item} />
-                        ))}
-                    </ol>
-                    {/* </ProtectedRoute> */}
-                </Switch>
-            </Router>
-        </ContextProvider>
+                    {joinedClasses.map((item) => (
+                        <JoinedClasses classData={item} />
+                    ))}
+                </ol>
+                {/* </ProtectedRoute> */}
+            </Switch>
+        </Router>
+
     );
 }
 

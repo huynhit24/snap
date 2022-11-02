@@ -7,6 +7,7 @@ import loginImg from "../assets/login.png";
 import Topography from "@material-ui/core/Typography";
 import { auth, provider, providerFacebook } from "../firebase";
 import { Facebook } from "@material-ui/icons";
+// import { useLocalContext } from "../context/context";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,8 +39,12 @@ const useStyles = makeStyles((theme) => ({
 
 function SignUp() {
   const classes = useStyles();
-
+  // eslint-disable-next-line no-unused-vars
+  // const { login : loginGoogle, loggedInUser } = useLocalContext();
+  // console.log(loggedInUser);
+  
   //xử lý đăng nhập Google
+  // eslint-disable-next-line no-unused-vars
   const login = () => {
     auth
       .signInWithPopup(provider)
@@ -62,7 +67,7 @@ function SignUp() {
         console.log(err);
       });
   };
-
+  
   //xử lý đăng nhập SĐT
   // const loginPhone = () => {
   //   auth
@@ -100,6 +105,7 @@ function SignUp() {
           className={classes.submit}
           startIcon={<FcGoogle />}
           onClick={login}
+          // onClick={() => loginGoogle()}
         >
           Đăng nhập Google
         </Button>
