@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import { IsUserRedirect, ProtectedRoute } from "./routes/Routes";
 import { useLocalContext } from "./context/context";
 import { db } from "./firebase";
+import { IsUserRedirect, ProtectedRoute } from "./routes/Routes";
+import SignUp from "./components/SignUp";
 
 function ClassApp() {
     const { loggedInMail } = useLocalContext();
@@ -55,27 +57,27 @@ function ClassApp() {
                         <Main classData={item} />
                     </Route>
                 ))}
-                {/* <IsUserRedirect
-                        user={loggedInMail}
-                        loggedInPath="/"
-                        path="/signin"
-                        exact
-                        >
-                        <Login />
-                    </IsUserRedirect> */}
+                <IsUserRedirect
+                    user={loggedInMail}
+                    loggedInPath="/"
+                    path="/signin"
+                    exact
+                >
+                    <SignUp />
+                </IsUserRedirect> */}
 
-                {/* <ProtectedRoute user={loggedInMail} path="/" exact> */}
-                <Drawer />
-                <ol className="joined">
-                    {createdClasses.map((item) => (
-                        <JoinedClasses classData={item} />
-                    ))}
+                <ProtectedRoute user={loggedInMail} path="/" exact>
+                    <Drawer />
+                    <ol className="joined">
+                        {createdClasses.map((item) => (
+                            <JoinedClasses classData={item} />
+                        ))}
 
-                    {joinedClasses.map((item) => (
-                        <JoinedClasses classData={item} />
-                    ))}
-                </ol>
-                {/* </ProtectedRoute> */}
+                        {joinedClasses.map((item) => (
+                            <JoinedClasses classData={item} />
+                        ))}
+                    </ol>
+                </ProtectedRoute>
             </Switch>
         </Router>
 
