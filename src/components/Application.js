@@ -28,8 +28,11 @@ import EditProfile from "./EditProfile";
 import Fade from "@material-ui/core/Fade";
 import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
-import { Language, FeaturedVideo } from "@material-ui/icons";
-
+import { Language, VideoCall,  School, BurstMode, ContactMail } from "@material-ui/icons";
+// import { School } from "@material-ui/icons/School";
+// import BurstMode from '@material-ui/icons/BurstMode';
+// import { VideoCall } from "@material-ui/icons/VideoCall";
+// import { ContactMailIcon } from "@material-ui/icons/ContactMail";
 //new import
 // import LaptopModal from "./LaptopModal";
 
@@ -290,9 +293,10 @@ function Application(props) {
             </Link> */}
           </Typography>
 
-          {/* Dịch ngôn ngữ */}
+          
           <div>
-          <IconButton
+            {/* Gọi video */}
+            <IconButton
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
@@ -300,16 +304,37 @@ function Application(props) {
               color="inherit"
               href={"http://localhost:5000/"}
             >
-              <FeaturedVideo />
+              <VideoCall style={{color: "lightgreen"}}/>
             </IconButton>
+            {/* Lớp học */}
             <IconButton
-              aria-label="account of current user"
+              aria-label="School"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleLanguage}
               color="inherit"
             >
-              <Language />
+              <School style={{color: "yellow"}}/>
+            </IconButton>
+            {/* Dark mode */}
+            <IconButton
+              aria-label="Darkmode"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleLanguage}
+              color="inherit"
+            >
+              <BurstMode style={{color: "#FB2576"}}/>
+            </IconButton>
+            {/* Liên hệ Snap */}
+            <IconButton
+              aria-label="Contact"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleLanguage}
+              color="inherit"
+            >
+              <ContactMail style={{color: "orange"}}/>
             </IconButton>
             {/* <Menu
               id="menu-appbar"
@@ -346,7 +371,7 @@ function Application(props) {
               onClick={handleMenu}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle style={{color: "white"}}/>
             </IconButton>
             <Menu
               id="menu-appbar"
