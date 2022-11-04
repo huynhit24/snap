@@ -10,6 +10,7 @@ import "./App.css";
 
 import SpeedDials from './components/SpeedDial';
 import ClassApp from "./ClassApp";
+// eslint-disable-next-line no-unused-vars
 import Main from "./components/Main/Main"
 // eslint-disable-next-line no-unused-vars
 import ReactDOM from 'react-dom';
@@ -71,6 +72,7 @@ function App() {
     });
   }, []);
 
+  // eslint-disable-next-line no-unused-vars
   function renderClassApp() {
     ReactDOM.render(
       <ContextProvider>
@@ -101,7 +103,7 @@ function App() {
                          : (<Home/>)
                     }   */}
                     {/* {() => renderClassApp()}  */}
-                    (<Main />
+                    {/* <Main /> */}
                 </Route>
                 <Route path="/channel/:id">
                   <Chat />
