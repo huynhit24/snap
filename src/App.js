@@ -10,6 +10,9 @@ import "./App.css";
 
 import SpeedDials from './components/SpeedDial';
 import ClassApp from "./ClassApp";
+import Main from "./components/Main/Main"
+// eslint-disable-next-line no-unused-vars
+import ReactDOM from 'react-dom';
 
 import { ContextProvider } from "./context/context";
 
@@ -68,6 +71,15 @@ function App() {
     });
   }, []);
 
+  function renderClassApp() {
+    ReactDOM.render(
+      <ContextProvider>
+        <ClassApp />
+      </ContextProvider>,
+      document.getElementById("root")
+      )
+  }
+
   return (
     <div className="App">
       <Router>
@@ -83,11 +95,14 @@ function App() {
                 <Route path="/" exact>
                   <Home />
                 </Route>
-                <Route path="/classroom" exact>
-                  <ContextProvider>
-                      <ClassApp />
-                  </ContextProvider>
-                  </Route>
+                <Route path="/classroom" exact>                  
+                    {/* {!localStorage.getItem("loginStatus") 
+                      ? renderClassApp
+                         : (<Home/>)
+                    }   */}
+                    {/* {() => renderClassApp()}  */}
+                    (<Main />
+                </Route>
                 <Route path="/channel/:id">
                   <Chat />
                 </Route>

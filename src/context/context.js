@@ -13,9 +13,28 @@ export function ContextProvider({ children }) {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [loggedInMail, setLoggedInMail] = useState(null);
 
-  const login = () => auth.signInWithPopup(provider);
+  const login = () => {
+    auth
+      .signInWithPopup(provider)
+      .then((res) => {
+        console.log("Success");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-  const logout = () => auth.signOut();
+  const logout = () => {
+    auth
+      .signOut()
+      .then(() => {
+        console.log("log out");
+        localStorage.clear();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {

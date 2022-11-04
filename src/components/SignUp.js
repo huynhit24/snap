@@ -50,6 +50,7 @@ function SignUp() {
       .signInWithPopup(provider)
       .then((res) => {
         console.log("Success");
+        localStorage.setItem("loginStatus", true); 
       })
       .catch((err) => {
         console.log(err);

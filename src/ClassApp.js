@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useLocalContext } from "./context/context";
 import { db } from "./firebase";
 import { IsUserRedirect, ProtectedRoute } from "./routes/Routes";
-import SignUp from "./components/SignUp";
+// import SignUp from "./components/SignUp";
+import LoginTest from "./components/LoginTest/LoginTest";
 
 function ClassApp() {
     const { loggedInMail } = useLocalContext();
@@ -63,7 +64,7 @@ function ClassApp() {
                     path="/signin"
                     exact
                 >
-                    <SignUp />
+                    <LoginTest />
                 </IsUserRedirect> */}
 
                 <ProtectedRoute user={loggedInMail} path="/" exact>
