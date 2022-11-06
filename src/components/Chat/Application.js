@@ -302,7 +302,7 @@ function Application(props) {
               aria-haspopup="true"
               onClick={handleCallVideo}
               color="inherit"
-              href={"/classroom"}
+              href={"/video"}
               title="Gọi video"
             >
               <VideoCall style={{color: "lightgreen"}}/>

@@ -1,4 +1,6 @@
 import React from 'react'
+import "./style.css";
+import logoImg from "../../../assets/images/logo-hutech.png";
 
 const MainVideo = () => {
     return (
@@ -103,16 +105,16 @@ const MainVideo = () => {
                     style={{
                         display: "inline-block",
                         padding: "0 12%",
-                        marginTop: 32,
+                        marginTop: 8,
                         textAlign: "center"
                     }}
                 >
                     <img
-                        src="./img/logo-hutech.png"
+                        src={logoImg}
                         alt="Logo Hutech"
                         style={{ color: "#cb43fc" }}
                         width="auto"
-                        height="80px"
+                        height="60px"
                     />
                     <p style={{ color: "white" }}>SmartClass supports for HUTECH IT</p>
                 </div>
