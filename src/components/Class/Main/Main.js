@@ -1,10 +1,10 @@
 import { Avatar, Button, TextField } from "@material-ui/core";
 import React, { useState } from "react";
-import { db, storage } from "../../firebase";
+import { db, storage } from "../../../firebase";
 import "./style.css";
 import firebase from "firebase";
-import { useLocalContext } from "../../context/context";
-import { Announcment } from "..";
+import { useLocalContext } from "../../../context/context";
+import { Announcment } from "../..";
 import { FlashOnOutlined } from "@material-ui/icons";
 const Main = ({ classData }) => {
   const { loggedInMail } = useLocalContext();

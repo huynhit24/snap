@@ -1,7 +1,7 @@
 import { Button } from "@material-ui/core";
 import React from "react";
 import logo from "../../assets/images/logo.png";
-import { useLocalContext } from "../../context/context";
+import { useLocalContext } from "../../../context/context";
 import "./style.css";
 const Login = () => {
   const { login, loggedInUser } = useLocalContext();

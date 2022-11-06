@@ -10,7 +10,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 
-import { Header } from "..";
+import { Header } from "../..";
 import { Menu } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 const useStyles = makeStyles({
