@@ -11,7 +11,8 @@ import "./App.css";
 import SpeedDials from './components/Common/SpeedDial';
 import ClassApp from "./ClassApp";
 // eslint-disable-next-line no-unused-vars
-import Main from "./components/Class/Main/Main"
+import Main from "./components/Class/Main/Main";
+// eslint-disable-next-line no-unused-vars
 import MainVideo from "./components/Video/MainVideo/MainVideo";
 // eslint-disable-next-line no-unused-vars
 import ReactDOM from 'react-dom';
@@ -106,9 +107,9 @@ function App() {
                     {/* {() => renderClassApp()}  */}
                     {/* <Main /> */}
                 </Route>
-                <Route path="/video">
+                {/* <Route path="/video">
                   <MainVideo />
-                </Route>
+                </Route> */}
                 <Route path="/channel/:id">
                   <Chat />
                 </Route>
