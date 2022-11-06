@@ -8,10 +8,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./firebase";
 import "./App.css";
 
-import SpeedDials from './components/SpeedDial';
+import SpeedDials from './components/Common/SpeedDial';
 import ClassApp from "./ClassApp";
 // eslint-disable-next-line no-unused-vars
-import Main from "./components/Main/Main"
+import Main from "./components/Class/Main/Main"
 // eslint-disable-next-line no-unused-vars
 import ReactDOM from 'react-dom';
 

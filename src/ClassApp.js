@@ -7,7 +7,7 @@ import { useLocalContext } from "./context/context";
 import { db } from "./firebase";
 import { IsUserRedirect, ProtectedRoute } from "./routes/Routes";
 // import SignUp from "./components/SignUp";
-import LoginTest from "./components/LoginTest/LoginTest";
+import LoginTest from "./components/Class/LoginTest/LoginTest";
 
 function ClassApp() {
     const { loggedInMail } = useLocalContext();
