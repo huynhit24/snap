@@ -10,11 +10,11 @@ import ExpandMore from "@material-ui/icons/ExpandMore";
 import IconButton from "@material-ui/core/IconButton";
 import Divider from "@material-ui/core/Divider";
 import AddIcon from "@material-ui/icons/Add";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { useHistory } from "react-router-dom";
 import { IoMdChatboxes } from "react-icons/io";
 import { BiHash } from "react-icons/bi";
-import CreateRoom from "./CreateRoom";
+import CreateRoom from "../Chat/CreateRoom";
 import Fade from "@material-ui/core/Fade";
 import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
@@ -127,7 +127,7 @@ function Rooms() {
           <ListItemIcon>
             <IoMdChatboxes className={classes.iconDesign} />
           </ListItemIcon>
-          <ListItemText primary="Phòng chat" style={{ color: "#8e9297", textAlign: "left" }} />
+          <ListItemText primary="Phòng chat" style={{ color: "white", textAlign: "left" }} />
           {open ? (
             <ExpandLess className={classes.primary} />
           ) : (
@@ -147,7 +147,7 @@ function Rooms() {
                 <ListItemIcon style={{ minWidth: "30px" }}>
                   <BiHash
                     className={classes.iconDesign}
-                    style={{ color: "#b9bbbe" }}
+                    style={{ color: "white" }}
                   />
                 </ListItemIcon>
                 <ListItemText
@@ -156,7 +156,7 @@ function Rooms() {
                       ? channel.channelName
                       : `${channel.channelName.substr(0, 12)}...`
                   }
-                  style={{ color: "#dcddde" }}
+                  style={{ color: "white" }}
                 />
               </ListItem>
             ))}

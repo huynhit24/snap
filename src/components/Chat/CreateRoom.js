@@ -56,7 +56,7 @@ function CreateRoom({ create, manage }) {
             color="primary"
             style={{ color: "white" }}
           >
-            Cancel
+            Hủy
           </Button>
           <Button
             onClick={(e) => {
@@ -67,7 +67,7 @@ function CreateRoom({ create, manage }) {
             autoFocus
             variant="contained"
           >
-            Create
+            Tạo
           </Button>
         </DialogActions>
       </Dialog>

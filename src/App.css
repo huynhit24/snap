@@ -31,7 +31,8 @@ body {
 }
 
 .MuiInputLabel-outlined {
-  color: rgba(173, 173, 173, 0.89) !important;
+  /* color: rgba(173, 173, 173, 0.89) !important; */
+  color: rgb(245, 245, 245) !important;
 }
 
 .MuiOutlinedInput-notchedOutline {

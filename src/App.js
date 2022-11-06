@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Application from "./components/Application";
-import Chat from "./components/Chat";
-import Login from "./components/SignUp";
-import Home from "./components/Home";
+import Application from "./components/Chat/Application";
+import Chat from "./components/Chat/Chat";
+import Login from "./components/Chat/SignUp";
+import Home from "./components/Chat/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./firebase";
 import "./App.css";
 
-import SpeedDials from './components/SpeedDial';
+import SpeedDials from './components/Common/SpeedDial';
+import ClassApp from "./ClassApp";
+// eslint-disable-next-line no-unused-vars
+import Main from "./components/Class/Main/Main"
+// eslint-disable-next-line no-unused-vars
+import ReactDOM from 'react-dom';
+
+import { ContextProvider } from "./context/context";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -65,6 +72,16 @@ function App() {
     });
   }, []);
 
+  // eslint-disable-next-line no-unused-vars
+  function renderClassApp() {
+    ReactDOM.render(
+      <ContextProvider>
+        <ClassApp />
+      </ContextProvider>,
+      document.getElementById("root")
+      )
+  }
+
   return (
     <div className="App">
       <Router>
@@ -80,9 +97,14 @@ function App() {
                 <Route path="/" exact>
                   <Home />
                 </Route>
-                {/* <Route path="/shop" exact>
-                    <LaptopModal />
-                  </Route> */}
+                <Route path="/classroom" exact>                  
+                    {/* {!localStorage.getItem("loginStatus") 
+                      ? renderClassApp
+                         : (<Home/>)
+                    }   */}
+                    {/* {() => renderClassApp()}  */}
+                    {/* <Main /> */}
+                </Route>
                 <Route path="/channel/:id">
                   <Chat />
                 </Route>

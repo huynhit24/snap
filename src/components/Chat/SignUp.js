@@ -3,10 +3,11 @@ import Button from "@material-ui/core/Button";
 import { FcGoogle } from "react-icons/fc";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import loginImg from "../assets/login.png";
+import loginImg from "../../assets/login.png";
 import Topography from "@material-ui/core/Typography";
-import { auth, provider, providerFacebook } from "../firebase";
+import { auth, provider, providerFacebook } from "../../firebase";
 import { Facebook } from "@material-ui/icons";
+// import { useLocalContext } from "../context/context";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,13 +39,18 @@ const useStyles = makeStyles((theme) => ({
 
 function SignUp() {
   const classes = useStyles();
-
+  // eslint-disable-next-line no-unused-vars
+  // const { login : loginGoogle, loggedInUser } = useLocalContext();
+  // console.log(loggedInUser);
+  
   //xử lý đăng nhập Google
+  // eslint-disable-next-line no-unused-vars
   const login = () => {
     auth
       .signInWithPopup(provider)
       .then((res) => {
         console.log("Success");
+        localStorage.setItem("loginStatus", true); 
       })
       .catch((err) => {
         console.log(err);
@@ -62,7 +68,7 @@ function SignUp() {
         console.log(err);
       });
   };
-
+  
   //xử lý đăng nhập SĐT
   // const loginPhone = () => {
   //   auth
@@ -100,6 +106,7 @@ function SignUp() {
           className={classes.submit}
           startIcon={<FcGoogle />}
           onClick={login}
+          // onClick={() => loginGoogle()}
         >
           Đăng nhập Google
         </Button>

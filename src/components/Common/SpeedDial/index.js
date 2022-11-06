@@ -1,11 +1,13 @@
 // eslint-disable-next-line no-unused-vars
+import VideoCall from '@material-ui/icons/VideoCall';
+import School from '@material-ui/icons/School';
 import BurstMode from '@material-ui/icons/BurstMode';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
 import HomeIcon from '@material-ui/icons/Home';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-import { LINKS } from '../../constant';
+import { LINKS } from '../../../constant';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 // import { Link } from 'react-scroll';
@@ -31,9 +33,11 @@ const actions = [
     to: null,
     isBlank: false,
   },
+  { icon: <School style={{color: "yellow"}}/>, name: 'Lớp học', to: '/classroom', isBlank: false },
+  { icon: <VideoCall style={{color: "pink"}}/>, name: 'Gọi video', to: null, isBlank: false },
   // { icon: <SettingButton />, name: 'Cài đặt', to: null, isBlank: false },
   {
-    icon: <ContactMailIcon style={{color: "yellow"}}/>,
+    icon: <ContactMailIcon style={{color: "#cb43fc"}}/>,
     name: 'Liên hệ Snap',
     to: LINKS.WEBSITE,
     isBlank: true,

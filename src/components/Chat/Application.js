@@ -19,17 +19,20 @@ import Badge from "@material-ui/core/Badge";
 import Avatar from "@material-ui/core/Avatar";
 import { Grid } from "@material-ui/core";
 import { deepPurple } from "@material-ui/core/colors";
-import Rooms from "./Rooms";
+import Rooms from "../Chat/Rooms";
 import { GoSignOut } from "react-icons/go";
 import { FaUserEdit } from "react-icons/fa";
-import { auth, db } from "../firebase";
+import { auth, db } from "../../firebase";
 import { Link, Redirect } from "react-router-dom";
-import EditProfile from "./EditProfile";
+import EditProfile from "../Chat/EditProfile";
 import Fade from "@material-ui/core/Fade";
 import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
-import { Language, FeaturedVideo } from "@material-ui/icons";
-
+import { Language, VideoCall,  School, BurstMode, ContactMail } from "@material-ui/icons";
+// import { School } from "@material-ui/icons/School";
+// import BurstMode from '@material-ui/icons/BurstMode';
+// import { VideoCall } from "@material-ui/icons/VideoCall";
+// import { ContactMailIcon } from "@material-ui/icons/ContactMail";
 //new import
 // import LaptopModal from "./LaptopModal";
 
@@ -191,7 +194,7 @@ function Application(props) {
       });
   };
 
-  const handleLanguage = () => {
+  const handleClassRoom = () => {
       
   }
 
@@ -280,7 +283,7 @@ function Application(props) {
           </IconButton>
 
           <Typography variant="h6" className={classes.title}>
-            <Link to="/" style={{ textDecoration: "none", color: "#dcddde" }}>
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
               😍 Trang chủ
             </Link>
             {/* modal show laptop from smartshop */}
@@ -290,26 +293,53 @@ function Application(props) {
             </Link> */}
           </Typography>
 
-          {/* Dịch ngôn ngữ */}
+          
           <div>
-          <IconButton
-              aria-label="account of current user"
+            {/* Gọi video */}
+            <IconButton
+              aria-label="VideoCall"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleCallVideo}
               color="inherit"
-              href={"http://localhost:5000/"}
+              href={"/classroom"}
+              title="Gọi video"
             >
-              <FeaturedVideo />
+              <VideoCall style={{color: "lightgreen"}}/>
             </IconButton>
+            {/* Lớp học */}
             <IconButton
-              aria-label="account of current user"
+              aria-label="School"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleLanguage}
+              onClick={handleClassRoom}
               color="inherit"
+              href={"/classroom"}
+              title="Lớp học"
             >
-              <Language />
+              <School style={{color: "yellow"}}/>
+            </IconButton>
+            {/* Dark mode */}
+            <IconButton
+              aria-label="Darkmode"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleClassRoom}
+              color="inherit"
+              title="Darkmode"
+            >
+              <BurstMode style={{color: "#FB2576"}}/>
+            </IconButton>
+            {/* Liên hệ Snap */}
+            <IconButton
+              aria-label="Contact"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleClassRoom}
+              color="inherit"
+              title="Liên hệ Snap"
+            >
+              <ContactMail style={{color: "orange"}}/>
             </IconButton>
             {/* <Menu
               id="menu-appbar"
@@ -345,8 +375,9 @@ function Application(props) {
               aria-haspopup="true"
               onClick={handleMenu}
               color="inherit"
+              title="Tài khoản"
             >
-              <AccountCircle />
+              <AccountCircle style={{color: "white"}}/>
             </IconButton>
             <Menu
               id="menu-appbar"

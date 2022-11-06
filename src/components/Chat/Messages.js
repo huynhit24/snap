@@ -8,9 +8,9 @@ import { AiFillLike } from "react-icons/ai";
 import { AiFillFire } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 import { AiFillDelete } from "react-icons/ai";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { useParams } from "react-router-dom";
-import DeleteModal from "./DeleteModal";
+import DeleteModal from "../Chat/DeleteModal";
 import { Anchorme } from "react-anchorme";
 
 const useStyles = makeStyles((theme) => ({

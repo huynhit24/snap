@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Messages from "./Messages";
+import Messages from "../Chat/Messages";
 import IconButton from "@material-ui/core/IconButton";
 import { useParams } from "react-router-dom";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import firebase from "firebase/app";
 import ScrollableFeed from "react-scrollable-feed";
 import { BiHash } from "react-icons/bi";
@@ -13,9 +13,10 @@ import { FiSend } from "react-icons/fi";
 import { GrEmoji } from "react-icons/gr";
 import { Picker } from "emoji-mart";
 import { RiImageAddLine } from "react-icons/ri";
-import FileUpload from "./FileUpload";
+import FileUpload from "../Chat/FileUpload";
 import "emoji-mart/css/emoji-mart.css";
-
+import FileUploadAllType from "../Chat/FileUploadAllType";
+import { RiFileAddLine } from "react-icons/ri"
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -73,7 +74,8 @@ function Chat() {
   const [emojiBtn, setEmojiBtn] = useState(false);
   const [modalState, setModalState] = useState(false);
   const [file, setFileName] = useState(null);
-
+  const [modalStateAllType, setModalStateAllType] = useState(false); 
+  const [fileAllType, setFileNameAllType] = useState(null);
   useEffect(() => {
     if (params.id) {
       db.collection("channels")
@@ -158,10 +160,24 @@ function Chat() {
     }
     e.target.value = null;
   };
+  // xử lý upload nhiều kiểu file khách nhau.
+  const openModalAllType = () => {
+    setModalStateAllType(!modalStateAllType);
+  };
+
+  const handelFileUploadAllType = (e) => {
+    e.preventDefault();
+    if (e.target.files[0]) {
+      setFileNameAllType(e.target.files[0]);
+      openModalAllType();
+    }
+    e.target.value = null;
+  };
 
   return (
     <div id="chat-darkmode" className={classes.root}>
       {modalState ? <FileUpload setState={openModal} file={file} /> : null}
+      {modalStateAllType ? <FileUploadAllType setState={openModalAllType} file={fileAllType} /> : null}
       <Grid item xs={12} className={classes.roomName}>
         <BiHash className={classes.iconDesign} />
         <h3 className={classes.roomNameText}>{channelName}</h3>
@@ -192,7 +208,25 @@ function Chat() {
               aria-label="upload picture"
               component="span"
             >
-              <RiImageAddLine style={{ color: "#b9bbbe" }} />
+              <RiImageAddLine title="Tải ảnh" style={{ color: "yellow" }} />
+            </IconButton>
+          </label>
+
+            {/* Upload all type of file */}
+          <input
+            accept="uploads/*"
+            className={classes.inputFile}
+            id="icon-button-file-all-type"
+            type="file"
+            onChange={(e) => handelFileUploadAllType(e)}
+          />
+          <label htmlFor="icon-button-file-all-type">
+            <IconButton
+              color="primary"
+              aria-label="upload file all type"
+              component="span"
+            >
+              <RiFileAddLine title="Tải file" style={{ color: "yellow" }} />
             </IconButton>
           </label>
 
@@ -201,7 +235,7 @@ function Chat() {
             component="button"
             onClick={() => setEmojiBtn(!emojiBtn)}
           >
-            <GrEmoji style={{ color: "#b9bbbe" }} />
+            <GrEmoji title="Emoji" style={{ color: "yellow" }} />
           </IconButton>
           {emojiBtn ? <Picker onSelect={addEmoji} theme="dark" /> : null}
 
@@ -225,7 +259,7 @@ function Chat() {
               }}
             />
             <IconButton type="submit" component="button">
-              <FiSend style={{ color: "#b9bbbe" }} />
+              <FiSend style={{ color: "white" }} />
             </IconButton>
           </form>
         </Grid>
