@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Messages from "./Messages";
+import Messages from "../Messages";
 import IconButton from "@material-ui/core/IconButton";
 import { useParams } from "react-router-dom";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import firebase from "firebase/app";
 import ScrollableFeed from "react-scrollable-feed";
 import { BiHash } from "react-icons/bi";
@@ -13,9 +13,9 @@ import { FiSend } from "react-icons/fi";
 import { GrEmoji } from "react-icons/gr";
 import { Picker } from "emoji-mart";
 import { RiImageAddLine } from "react-icons/ri";
-import FileUpload from "./FileUpload";
+import FileUpload from "../FileUpload";
 import "emoji-mart/css/emoji-mart.css";
-import FileUploadAllType from "./FileUploadAllType";
+import FileUploadAllType from "../FileUploadAllType";
 import { RiFileAddLine } from "react-icons/ri"
 const useStyles = makeStyles((theme) => ({
   root: {

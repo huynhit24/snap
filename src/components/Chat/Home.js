@@ -6,7 +6,7 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { useHistory } from "react-router-dom";
 //import backgroundChat from "../Assets/gaming-plus-story_img.png";
 
