@@ -9,10 +9,10 @@ import TextField from "@material-ui/core/TextField";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import { storage } from "../firebase";
+import { storage } from "../../firebase";
 import { useParams } from "react-router-dom";
 import firebase from "firebase/app";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { DiGoogleDrive } from "react-icons/di";
 const useStyles = makeStyles((theme) => ({
   displayImage: {
