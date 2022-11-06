@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Application from "./components/Application";
-import Chat from "./components/Chat";
-import Login from "./components/SignUp";
-import Home from "./components/Home";
+import Application from "./components/Chat/Application";
+import Chat from "./components/Chat/Chat";
+import Login from "./components/Chat/SignUp";
+import Home from "./components/Chat/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./firebase";
 import "./App.css";

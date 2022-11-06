@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Avatar, Button, Dialog, Slide, TextField } from "@material-ui/core";
-import { useLocalContext } from "../../context/context";
+import { useLocalContext } from "../../../context/context";
 import { Close } from "@material-ui/icons";
 import "./style.css";
-import { db } from "../../firebase";//export default thì bỏ dấu ngoặc destructuring
+import { db } from "../../../firebase";//export default thì bỏ dấu ngoặc destructuring
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;

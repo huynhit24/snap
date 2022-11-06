@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 import { FcGoogle } from "react-icons/fc";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import loginImg from "../assets/login.png";
+import loginImg from "../../assets/login.png";
 import Topography from "@material-ui/core/Typography";
 import { auth, provider, providerFacebook } from "../../firebase";
 import { Facebook } from "@material-ui/icons";

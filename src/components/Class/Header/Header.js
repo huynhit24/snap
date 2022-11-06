@@ -8,8 +8,8 @@ import {
   } from "@material-ui/core";
   import { Add, Apps } from "@material-ui/icons";
   import React from "react";
-  import { CreateClass, JoinClass } from "..";
-  import { useLocalContext } from "../../context/context";
+  import { CreateClass, JoinClass } from "../..";
+  import { useLocalContext } from "../../../context/context";
   import { useStyles } from "./style";
   
   const Header = ({ children }) => {
