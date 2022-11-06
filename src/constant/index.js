@@ -23,4 +23,5 @@ export const THEME_KEYS = {
 export const LINKS = {
     FB: 'https://facebook.com/huynh2357',
     WEBSITE: 'https://github.com/huynhit24',
+    VIDEO: 'http://localhost:5000/index.html'
 };
