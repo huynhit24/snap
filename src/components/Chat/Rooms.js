@@ -14,7 +14,7 @@ import { db } from "../firebase";
 import { useHistory } from "react-router-dom";
 import { IoMdChatboxes } from "react-icons/io";
 import { BiHash } from "react-icons/bi";
-import CreateRoom from "./Chat/CreateRoom";
+import CreateRoom from "../Chat/CreateRoom";
 import Fade from "@material-ui/core/Fade";
 import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
