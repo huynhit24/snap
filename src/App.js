@@ -9,15 +9,6 @@ import { auth, db } from "./firebase";
 import "./App.css";
 
 import SpeedDials from './components/Common/SpeedDial';
-import ClassApp from "./ClassApp";
-// eslint-disable-next-line no-unused-vars
-import Main from "./components/Class/Main/Main";
-// eslint-disable-next-line no-unused-vars
-import MainVideo from "./components/Video/MainVideo/MainVideo";
-// eslint-disable-next-line no-unused-vars
-import ReactDOM from 'react-dom';
-
-import { ContextProvider } from "./context/context";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,16 +64,6 @@ function App() {
       }
     });
   }, []);
-
-  // eslint-disable-next-line no-unused-vars
-  function renderClassApp() {
-    ReactDOM.render(
-      <ContextProvider>
-        <ClassApp />
-      </ContextProvider>,
-      document.getElementById("root")
-      )
-  }
 
   return (
     <div className="App">

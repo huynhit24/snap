@@ -7,7 +7,6 @@ import HomeIcon from '@material-ui/icons/Home';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-import { LINKS } from '../../../constant';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 // import { Link } from 'react-scroll';
@@ -39,7 +38,7 @@ const actions = [
   {
     icon: <ContactMailIcon style={{color: "#cb43fc"}}/>,
     name: 'Liên hệ Snap',
-    to: LINKS.WEBSITE,
+    to: null,
     isBlank: true,
   },
 ];

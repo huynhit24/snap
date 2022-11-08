@@ -35,7 +35,6 @@ import { Language, VideoCall,  School, BurstMode, ContactMail } from "@material-
 // import { ContactMailIcon } from "@material-ui/icons/ContactMail";
 //new import
 // import LaptopModal from "./LaptopModal";
-import { LINKS } from '../../constant';
 
 const drawerWidth = 240;
 
@@ -303,7 +302,7 @@ function Application(props) {
               aria-haspopup="true"
               onClick={handleCallVideo}
               color="inherit"
-              href={LINKS.VIDEO}
+              href={null}
               title="Gọi video"
             >
               <VideoCall style={{color: "lightgreen"}}/>
