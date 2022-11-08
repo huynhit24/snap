@@ -203,6 +203,13 @@ function Application(props) {
       //window.open("https://www.google.com","_self")
   }
 
+  const handleContact = () => {
+    
+  }
+
+  const handleDarkMode = () => {
+
+  }
   const drawer = userDetails && (
     <div>
       <Toolbar className={classes.sideToolBar}>
@@ -302,11 +309,12 @@ function Application(props) {
               aria-haspopup="true"
               onClick={handleCallVideo}
               color="inherit"
-              href={null}
+              href={process.env.REACT_LINK_WEBSITE_CALLVIDEO || "http://localhost:5000/"}
               title="Gọi video"
             >
               <VideoCall style={{color: "lightgreen"}}/>
             </IconButton>
+
             {/* Lớp học */}
             <IconButton
               aria-label="School"
@@ -314,28 +322,30 @@ function Application(props) {
               aria-haspopup="true"
               onClick={handleClassRoom}
               color="inherit"
-              href={"/classroom"}
+              href={process.env.REACT_LINK_WEBSITE_CLASSROOM || "http://localhost:3001/"}
               title="Lớp học"
             >
               <School style={{color: "yellow"}}/>
             </IconButton>
+
             {/* Dark mode */}
             <IconButton
               aria-label="Darkmode"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleClassRoom}
+              onClick={handleDarkMode}
               color="inherit"
               title="Darkmode"
             >
               <BurstMode style={{color: "#FB2576"}}/>
             </IconButton>
+
             {/* Liên hệ Snap */}
             <IconButton
               aria-label="Contact"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleClassRoom}
+              onClick={handleContact}
               color="inherit"
               title="Liên hệ Snap"
             >
