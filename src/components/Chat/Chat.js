@@ -12,8 +12,6 @@ import { BiHash } from "react-icons/bi";
 import { FiSend } from "react-icons/fi";
 import { GrEmoji } from "react-icons/gr";
 import { Picker } from "emoji-mart";
-import { RiImageAddLine } from "react-icons/ri";
-import FileUpload from "../Chat/FileUpload";
 import "emoji-mart/css/emoji-mart.css";
 import FileUploadAllType from "../Chat/FileUploadAllType";
 import { RiFileAddLine } from "react-icons/ri"
@@ -72,8 +70,6 @@ function Chat() {
   const [channelName, setChannelName] = useState("");
   const [userNewMsg, setUserNewMsg] = useState("");
   const [emojiBtn, setEmojiBtn] = useState(false);
-  const [modalState, setModalState] = useState(false);
-  const [file, setFileName] = useState(null);
   const [modalStateAllType, setModalStateAllType] = useState(false); 
   const [fileAllType, setFileNameAllType] = useState(null);
   useEffect(() => {
@@ -148,18 +144,6 @@ function Chat() {
     setUserNewMsg(userNewMsg + e.native);
   };
 
-  const openModal = () => {
-    setModalState(!modalState);
-  };
-
-  const handelFileUpload = (e) => {
-    e.preventDefault();
-    if (e.target.files[0]) {
-      setFileName(e.target.files[0]);
-      openModal();
-    }
-    e.target.value = null;
-  };
   // xử lý upload nhiều kiểu file khách nhau.
   const openModalAllType = () => {
     setModalStateAllType(!modalStateAllType);
@@ -176,7 +160,6 @@ function Chat() {
 
   return (
     <div id="chat-darkmode" className={classes.root}>
-      {modalState ? <FileUpload setState={openModal} file={file} /> : null}
       {modalStateAllType ? <FileUploadAllType setState={openModalAllType} file={fileAllType} /> : null}
       <Grid item xs={12} className={classes.roomName}>
         <BiHash className={classes.iconDesign} />
@@ -195,23 +178,6 @@ function Chat() {
       </Grid>
       <div className={classes.footer}>
         <Grid item xs={12} className={classes.footerContent}>
-          <input
-            accept="image/*"
-            className={classes.inputFile}
-            id="icon-button-file"
-            type="file"
-            onChange={(e) => handelFileUpload(e)}
-          />
-          <label htmlFor="icon-button-file">
-            <IconButton
-              color="primary"
-              aria-label="upload picture"
-              component="span"
-            >
-              <RiImageAddLine title="Tải ảnh" style={{ color: "yellow" }} />
-            </IconButton>
-          </label>
-
             {/* Upload all type of file */}
           <input
             accept="uploads/*"
