@@ -379,11 +379,13 @@ function Messages({ values, msgId }) {
 
           <Grid item xs={12} md={12} style={{ paddingTop: "5px" }}>
             {postImg ? (
-              <img
-                src={postImg}
-                alt="user"
-                style={{ height: "30vh", width: "auto", borderRadius: "4px" }}
-              />
+              <a href={postImg} style={{fontSize: "bold"}}>
+                <img
+                  src={postImg}
+                  alt="Tải ngay"
+                  style={{ height: "30vh", width: "auto", borderRadius: "4px" }}
+                />
+              </a>
             ) : null}
           </Grid>
 
