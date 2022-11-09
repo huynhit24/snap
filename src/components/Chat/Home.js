@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import Avatar from "@material-ui/core/Avatar";
-import { db } from "../../firebase";
-import { useHistory } from "react-router-dom";
-//import backgroundChat from "../Assets/gaming-plus-story_img.png";
+import background_1 from '../../assets/images/background-snap.jpg';
+import background_2 from '../../assets/images/background-snap-2.jpg';
+import background_3 from '../../assets/images/background-snap-3.jpg';
+import background_4 from '../../assets/images/background-snap-4.jpg';
+import background_5 from '../../assets/images/background-snap-5.jpg';
+import background_6 from '../../assets/images/background-snap-6.jpg';
+import background_7 from '../../assets/images/background-snap-7.jpg';
 
-// var randomColor = Math.floor(Math.random()*16777215).toString(16);
+
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: "50px",
@@ -73,30 +73,36 @@ const useStyles = makeStyles((theme) => ({
   } 
 }));
 
+const images = [
+  background_1,
+  background_2,
+  background_3,
+  background_4,
+  background_5,
+  background_6,
+  background_7
+];
+
 function Home() {
   const classes = useStyles();
-  const [channels, setChannels] = useState([]);
-  const history = useHistory();
+  const [image, setImage] = useState(0);
 
   useEffect(() => {
-    db.collection("channels")
-      .orderBy("channelName", "asc")
-      .onSnapshot((snapshot) => {
-        setChannels(
-          snapshot.docs.map((channel) => ({
-            channelName: channel.data().channelName,
-            id: channel.id,
-          }))
-        );
-      });
-  }, []);
+    const interval = setInterval(() => {
+      if (image === images.length - 1) {
+        setImage(0);
+      } else {
+        setImage(image + 1);
+      }
+    }, 1000);
 
-  const goToChannel = (id) => {
-    history.push(`/channel/${id}`);
-  };
+    return () => {
+      clearInterval(interval);
+    };
+  }, [image]);
 
   return (
-    <div style={{ backGroundColor: "transparent" }}>{/*<div style={{ backgroundColor: "rgb(34 39 59)" }}>*/}
+    <div style={{ backGroundColor: "transparent", backgroundImage: images[image] }}>{/*<div style={{ backgroundColor: "rgb(34 39 59)" }}>*/}
       <Grid container className={classes.root}>
         <Grid item xs={12} style={{ textAlign: "center" }}>
           {/* color: "#cb43fc" */}
@@ -107,41 +113,9 @@ function Home() {
             Cùng nhau trao đổi, chia sẻ kinh nghiệm học tập mọi lúc mọi nơi! 👍👍
           </Typography>          
         </Grid>
-        {/* <Grid item xs={12} style={{ textAlign: "center" }}>
-          <img src={backgroundChat} className={classes.backgroundChatSupport} alt="No background"/>
-        </Grid> */}
-      </Grid>
-
-      <Grid container className={classes.rootChannel}>
-        {channels.map((channel) => (
-          <Grid
-            item
-            xs={6}
-            md={3}
-            className={classes.channelDiv}
-            key={channel.id}
-          >
-            <Card className={classes.channelCard}>
-              <CardActionArea
-                style={{ display: "flex" }}
-                onClick={() => goToChannel(channel.id)}
-              >
-                <CardContent className={classes.channelContent}>
-                  <Avatar
-                    variant="square"
-                    className={classes.square}
-                    style={{ backgroundColor: "#6a9ec066" }}
-                  >
-                    {channel.channelName.substr(0, 1).toUpperCase()}
-                  </Avatar>
-                  <Typography className={classes.channelText}>
-                    {channel.channelName}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        ))}
+        <Grid item xs={12} style={{ textAlign: "center" }}>
+          <img src={images[image]} className={classes.backgroundChatSupport} alt="No background" width={"100%"} height={"100%"}/>
+        </Grid>
       </Grid>
     </div>
   );
