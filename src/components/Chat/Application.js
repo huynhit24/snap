@@ -295,9 +295,9 @@ function Application(props) {
             </Link>
             {/* modal show laptop from smartshop */}
             {/* <LaptopModal /> */}
-            {/* <Link to="/shop" style={{ textDecoration: "none", color: "#dcddde", marginLeft: "50px" }}>
-              😍 Call Video
-            </Link> */}
+            <Link to="/list-room" style={{ textDecoration: "none", color: "#dcddde", marginLeft: "50px" }}>
+              😤 Danh sách phòng
+            </Link>
           </Typography>
 
           

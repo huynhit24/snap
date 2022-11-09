@@ -9,7 +9,7 @@ import { auth, db } from "./firebase";
 import "./App.css";
 
 import SpeedDials from './components/Common/SpeedDial';
-
+import ListRoom from './components/Chat/ListRoom';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -79,6 +79,9 @@ function App() {
               <Switch>
                 <Route path="/" exact>
                   <Home />
+                </Route>
+                <Route path="/list-room" exact>
+                  <ListRoom />
                 </Route>
                 <Route path="/classroom" exact>                  
                     {/* {!localStorage.getItem("loginStatus") 
