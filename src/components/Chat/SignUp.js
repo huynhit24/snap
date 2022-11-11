@@ -3,7 +3,8 @@ import Button from "@material-ui/core/Button";
 import { FcGoogle } from "react-icons/fc";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import loginImg from "../../assets/login.png";
+// import loginImg from "../../assets/login.png";
+import loginImg2 from "../../assets/login-2.png";
 import Topography from "@material-ui/core/Typography";
 import { auth, provider, providerFacebook } from "../../firebase";
 import { Facebook } from "@material-ui/icons";
@@ -22,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     paddingBottom: "25px",
     paddingTop: "35px",
+    color: "black",
+    backgroundColor: "white",
   },
   mainImg: {
     width: "100%",
@@ -29,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
-    color: "#d9d9d9",
+    // color: "#d9d9d9",
+    color: "white",
     backgroundColor: "green",
   },
   FBLogin: {
@@ -96,7 +100,7 @@ function SignUp() {
   return (
     <Container component="div" maxWidth="xs" className={classes.root}>
       <div className={classes.paper}>
-        <img src={loginImg} className={classes.mainImg} alt="signup img" />
+        <img src={loginImg2} className={classes.mainImg} alt="signup img" />
         <Topography variant="h4" style={{ paddingTop: "15px" }}>
           Đăng nhập Snap 🤞🤞🤞
         </Topography>

@@ -8,6 +8,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth, db } from "./firebase";
 import "./App.css";
 
+import background_1 from '../src/assets/images/background-snap.jpg';
+import background_2 from '../src/assets/images/background-snap-2.jpg';
+import background_3 from '../src/assets/images/background-snap-3.jpg';
+import background_4 from '../src/assets/images/background-snap-4.jpg';
+import background_5 from '../src/assets/images/background-snap-5.jpg';
+import background_6 from '../src/assets/images/background-snap-6.jpg';
+import background_7 from '../src/assets/images/background-snap-7.jpg';
+// import { useState, useEffect } from "react";
+
 import SpeedDials from './components/Common/SpeedDial';
 import ListRoom from './components/Chat/ListRoom';
 const useStyles = makeStyles((theme) => ({
@@ -18,9 +27,19 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     backgroundColor: "#22273b !important",
-    height: "100vh",
+    // height: "100vh",
   },
 }));
+
+const images = [
+  background_1,
+  background_2,
+  background_3,
+  background_4,
+  background_5,
+  background_6,
+  background_7
+];
 
 function App() {
   const classes = useStyles();
@@ -65,8 +84,26 @@ function App() {
     });
   }, []);
 
+  
+  const [image, setImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (image === images.length - 1) {
+        setImage(0);
+      } else {
+        setImage(image + 1);
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [image]);
+
+
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: `url(${images[image]})`, backgroundSize: 'cover'}}>
       <Router>
         {!user ? (
           <Login />
