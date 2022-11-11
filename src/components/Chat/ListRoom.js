@@ -104,7 +104,7 @@ function ListRoom() {
              Snap 🤞🤞🤞
           </Typography>
           <Typography component="h1" className={classes.subHeading} style={{color: "white"}}>
-            Cùng nhau trao đổi, chia sẻ kinh nghiệm học tập mọi lúc mọi nơi! 👍👍
+            Danh sách phòng chat! 👍👍
           </Typography>          
         </Grid>
         {/* <Grid item xs={12} style={{ textAlign: "center" }}>
