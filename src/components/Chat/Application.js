@@ -19,7 +19,7 @@ import Badge from "@material-ui/core/Badge";
 import Avatar from "@material-ui/core/Avatar";
 import { Grid } from "@material-ui/core";
 import { deepPurple } from "@material-ui/core/colors";
-import Rooms from "../Chat/Rooms";
+import Rooms from "../Chat/Rooms";import Users from "../Chat/Users";
 import { GoSignOut } from "react-icons/go";
 import { FaUserEdit } from "react-icons/fa";
 import { auth, db } from "../../firebase";
@@ -249,6 +249,8 @@ function Application(props) {
       </Grid>
       <Divider />
       <Rooms />
+      <Divider />
+      <Users />
       <Divider />
     </div>
   );
