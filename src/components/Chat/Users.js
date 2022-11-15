@@ -10,7 +10,7 @@ import ExpandMore from "@material-ui/icons/ExpandMore";
 import IconButton from "@material-ui/core/IconButton";
 import { db } from "../../firebase";
 import { useHistory } from "react-router-dom";
-import { IoMdChatboxes } from "react-icons/io";
+import { ImUserCheck } from "react-icons/im";
 import { BiHash } from "react-icons/bi";
 import Fade from "@material-ui/core/Fade";
 import Snackbar from "@material-ui/core/Snackbar";
@@ -80,7 +80,7 @@ function Users() {
       <List component="nav" aria-labelledby="nested-list-subheader">
         <ListItem button onClick={handleClick}>
           <ListItemIcon>
-            <IoMdChatboxes className={classes.iconDesign} />
+            <ImUserCheck className={classes.iconDesign} />
           </ListItemIcon>
           <ListItemText primary="Người dùng" style={{ color: "white", textAlign: "left" }} />
           {open ? (
