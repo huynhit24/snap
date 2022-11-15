@@ -74,11 +74,38 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+const colors = [
+  "#6a9ec066",
+  "yellow",
+  "green",
+  "red",
+  "blue",
+  "pink",
+  "orange",
+  "purple"
+];
+
 function ListRoom() {
   const classes = useStyles();
   const [channels, setChannels] = useState([]);
   const history = useHistory();
   const [loading, setLoading] = useState(true);
+  const [color, setColor] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (color === colors.length - 1) {
+        setColor(0);
+      } else {
+        setColor(color + 1);
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [color]);
+
   useEffect(() => {
     db.collection("channels")
       .orderBy("channelName", "asc")
@@ -139,7 +166,7 @@ function ListRoom() {
                         <Avatar
                           variant="square"
                           className={classes.square}
-                          style={{ backgroundColor: "#6a9ec066" }}
+                          style={{ backgroundColor: colors[color] }}
                         >
                           {channel.channelName.substr(0, 1).toUpperCase()}
                         </Avatar>
