@@ -28,6 +28,8 @@ import EditProfile from "../Chat/EditProfile";
 import Fade from "@material-ui/core/Fade";
 import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
+import { MdModeComment } from "react-icons/md";
+
 import { Language, VideoCall,  School, BurstMode, ContactMail } from "@material-ui/icons";
 // import { School } from "@material-ui/icons/School";
 // import BurstMode from '@material-ui/icons/BurstMode';
@@ -210,6 +212,10 @@ function Application(props) {
   const handleDarkMode = () => {
 
   }
+
+  const handleConversations = () => {
+
+  }
   const drawer = userDetails && (
     <div>
       <Toolbar className={classes.sideToolBar}>
@@ -304,6 +310,19 @@ function Application(props) {
 
           
           <div>
+            {/* Gọi video */}
+            <IconButton
+              aria-label="Conversations"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleConversations}
+              color="inherit"
+              href={process.env.REACT_LINK_WEBSITE_CALLVIDEO || "http://localhost:5000/"}
+              title="Chat riêng tư"
+            >
+              <MdModeComment style={{color: "lightblue"}}/>
+            </IconButton>
+
             {/* Gọi video */}
             <IconButton
               aria-label="VideoCall"
