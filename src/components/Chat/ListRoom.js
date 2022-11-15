@@ -9,6 +9,7 @@ import Avatar from "@material-ui/core/Avatar";
 import { db } from "../../firebase";
 import { useHistory } from "react-router-dom";
 //import backgroundChat from "../Assets/gaming-plus-story_img.png";
+import { CircularProgress } from "@material-ui/core";
 
 // var randomColor = Math.floor(Math.random()*16777215).toString(16);
 const useStyles = makeStyles((theme) => ({
@@ -70,14 +71,14 @@ const useStyles = makeStyles((theme) => ({
     width: "50%",
     height: "auto",
     // backgroundColor: "white",
-  } 
+  }
 }));
 
 function ListRoom() {
   const classes = useStyles();
   const [channels, setChannels] = useState([]);
   const history = useHistory();
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     db.collection("channels")
       .orderBy("channelName", "asc")
@@ -89,6 +90,7 @@ function ListRoom() {
           }))
         );
       });
+    setLoading(false);
   }, []);
 
   const goToChannel = (id) => {
@@ -96,54 +98,67 @@ function ListRoom() {
   };
 
   return (
-    <div style={{ backGroundColor: "transparent" }}>{/*<div style={{ backgroundColor: "rgb(34 39 59)" }}>*/}
-      <Grid container className={classes.root}>
-        <Grid item xs={12} style={{ textAlign: "center" }}>
-          {/* color: "#cb43fc" */}
-          <Typography component="h1" className={classes.heading} style={{color: "#cb43fc"}}>
-             Snap 🤞🤞🤞
-          </Typography>
-          <Typography component="h1" className={classes.subHeading} style={{color: "white"}}>
-            Danh sách phòng chat! 👍👍
-          </Typography>          
-        </Grid>
-        {/* <Grid item xs={12} style={{ textAlign: "center" }}>
+    <>
+      {loading ? (
+        <div style={{ display: "flex", height: "100%", width: "100%", justifyContent: "center", alignItems: "center" }}>
+          <CircularProgress />
+        </div>
+      ) : (
+        <>
+          <div style={{ backGroundColor: "transparent" }}>{/*<div style={{ backgroundColor: "rgb(34 39 59)" }}>*/}
+            <Grid container className={classes.root}>
+              <Grid item xs={12} style={{ textAlign: "center" }}>
+                {/* color: "#cb43fc" */}
+                <Typography component="h1" className={classes.heading} style={{ color: "#cb43fc" }}>
+                  Snap 🤞🤞🤞
+                </Typography>
+                <Typography component="h1" className={classes.subHeading} style={{ color: "white" }}>
+                  Danh sách phòng chat! 👍👍
+                </Typography>
+              </Grid>
+              {/* <Grid item xs={12} style={{ textAlign: "center" }}>
           <img src={backgroundChat} className={classes.backgroundChatSupport} alt="No background"/>
         </Grid> */}
-      </Grid>
+            </Grid>
 
-      <Grid container className={classes.rootChannel}>
-        {channels.map((channel) => (
-          <Grid
-            item
-            xs={6}
-            md={3}
-            className={classes.channelDiv}
-            key={channel.id}
-          >
-            <Card className={classes.channelCard}>
-              <CardActionArea
-                style={{ display: "flex" }}
-                onClick={() => goToChannel(channel.id)}
-              >
-                <CardContent className={classes.channelContent}>
-                  <Avatar
-                    variant="square"
-                    className={classes.square}
-                    style={{ backgroundColor: "#6a9ec066" }}
-                  >
-                    {channel.channelName.substr(0, 1).toUpperCase()}
-                  </Avatar>
-                  <Typography className={classes.channelText}>
-                    {channel.channelName}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </div>
+            <Grid container className={classes.rootChannel}>
+              {channels.map((channel) => (
+                <Grid
+                  item
+                  xs={6}
+                  md={3}
+                  className={classes.channelDiv}
+                  key={channel.id}
+                >
+                  <Card className={classes.channelCard}>
+                    <CardActionArea
+                      style={{ display: "flex" }}
+                      onClick={() => goToChannel(channel.id)}
+                    >
+                      <CardContent className={classes.channelContent}>
+                        <Avatar
+                          variant="square"
+                          className={classes.square}
+                          style={{ backgroundColor: "#6a9ec066" }}
+                        >
+                          {channel.channelName.substr(0, 1).toUpperCase()}
+                        </Avatar>
+                        <Typography className={classes.channelText}>
+                          {channel.channelName}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </div>
+        </>
+      )}
+    </>
+
+
+
   );
 }
 
