@@ -68,7 +68,7 @@ function Users() {
         open={alert}
         onClose={handleAlert}
         TransitionComponent={Fade}
-        message="Room Name Already Exits!!"
+        message="User Name Already Exits!!"
         key={Fade}
         action={
           <IconButton aria-label="close" color="inherit" onClick={handleAlert}>
@@ -82,7 +82,7 @@ function Users() {
           <ListItemIcon>
             <IoMdChatboxes className={classes.iconDesign} />
           </ListItemIcon>
-          <ListItemText primary="Phòng chat" style={{ color: "white", textAlign: "left" }} />
+          <ListItemText primary="Người dùng" style={{ color: "white", textAlign: "left" }} />
           {open ? (
             <ExpandLess className={classes.primary} />
           ) : (
