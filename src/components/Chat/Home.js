@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import background_1 from '../../assets/images/background-snap.jpg';
-import background_2 from '../../assets/images/background-snap-2.jpg';
-import background_3 from '../../assets/images/background-snap-3.jpg';
-import background_4 from '../../assets/images/background-snap-4.jpg';
-import background_5 from '../../assets/images/background-snap-5.jpg';
-import background_6 from '../../assets/images/background-snap-6.jpg';
-import background_7 from '../../assets/images/background-snap-7.jpg';
+import background_1 from '../../assets/images/bg-1.webp';
+import background_2 from '../../assets/images/bg-2.png';
+import background_3 from '../../assets/images/bg-3.jpg';
+import background_4 from '../../assets/images/bg-4.png';
+import background_5 from '../../assets/images/bg-5.webp';
+import background_6 from '../../assets/images/bg-6.jpg';
+import background_7 from '../../assets/images/bg-7.png';
 
 
 const useStyles = makeStyles((theme) => ({
