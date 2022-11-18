@@ -336,7 +336,7 @@ function Application(props) {
               aria-haspopup="true"
               onClick={handleCallVideo}
               color="inherit"
-              href={process.env.REACT_LINK_WEBSITE_CALLVIDEO || "https://snap-call-video.netlify.app/" || "http://localhost:5000/"}
+              href={process.env.REACT_LINK_WEBSITE_CALLVIDEO || "http://localhost:5000/" || "https://snap-call-video.netlify.app/"}
               title="Gọi video"
             >
               <VideoCall style={{color: "lightgreen"}}/>
